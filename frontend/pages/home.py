@@ -3,13 +3,13 @@ import requests
 
 st.title(" Scientific Term Explainer")
 
-# 👋 Greeting
+
 if "username" in st.session_state:
     st.write(f"Hello {st.session_state['username']} !")
 else:
     st.info("You are searching as an anonymous user")
 
-# 🔎 Search input
+#  Search input
 term = st.text_input("Enter a scientific term")
 
 if st.button("Search"):
@@ -18,7 +18,7 @@ if st.button("Search"):
     else:
         headers = {}
 
-        # 🔐 Send token ONLY if logged in
+        #  Send token ONLY if logged in
         if "token" in st.session_state:
             headers["Authorization"] = f"Bearer {st.session_state['token']}"
 
@@ -29,7 +29,7 @@ if st.button("Search"):
         )
 
         if response.status_code == 200:
-            st.success("Search completed ✅")
+            st.success("Search completed ")
             st.info(f"You searched: {term}")
             st.write("AI explanation will appear here")
         else:
@@ -37,7 +37,7 @@ if st.button("Search"):
 
 st.divider()
 
-# 🚪 Logout button ONLY for logged-in users
+#  Logout button ONLY for logged-in users
 if "token" in st.session_state:
     if st.button("Logout"):
         st.session_state.clear()

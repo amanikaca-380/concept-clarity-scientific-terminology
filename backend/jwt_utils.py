@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
 
-# 🔐 Secret key (keep private)
+#  Secret key (keep private)
 SECRET_KEY = "change-this-to-a-random-secret"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
