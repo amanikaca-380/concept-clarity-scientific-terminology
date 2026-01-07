@@ -21,7 +21,7 @@ if st.button("Login"):
             st.session_state["token"] = data["access_token"]
             st.session_state["username"] = data["username"]
             st.session_state["logged_in"] = True
-            st.success(f"Welcome {data['username']} 🎉")
+            st.success(f"Welcome {data['username']} ")
             st.session_state["logged_in"] = True
             st.session_state["username"] = data["username"]
         else:
